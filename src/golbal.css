@@ -1,0 +1,69 @@
+/* / Slick-Slider / */
+.slick-slide {
+  padding-inline: 5px !important;
+}
+.slick-list {
+  /* / min-height: 320px !important; / */
+  width: 90vw !important;
+}
+
+.slick-dots li.slick-active button:before {
+  font-size: 20px !important;
+  display: flex !important;
+  justify-content: center !important;
+  border: none;
+  color: #dda45c !important;
+}
+.slick-dots li button:before {
+  font-size: 20px !important;
+  display: flex;
+  justify-content: center !important;
+  border: none;
+  color: white !important;
+  border: 1px solid #dda45c;
+  border-radius: 100%;
+  opacity: 0.75 !important;
+}
+
+.lawyers .slick-track {
+  margin-bottom: 20px !important;
+}
+
+.slick-arrow.slick-next:before {
+  content: "";
+}
+
+.slick-arrow.slick-prev:before {
+  content: "";
+}
+.description-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .slick-list {
+    width: 90vw !important;
+  }
+  .slick-prev {
+    left: -15px !important;
+  }
+  .slick-next {
+    right: -20px !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .slick-prev {
+    left: -40px !important;
+  }
+  .slick-next {
+    right: -40px !important;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .slick-list {
+    max-width: 1230px !important;
+  }
+}
