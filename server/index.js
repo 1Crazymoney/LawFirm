@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"http://localhost:3000"
+        origin:"https://lawfirm-drab.vercel.app"
     })
 )
 app.post("/api/v1/request", async (req, res) => {
