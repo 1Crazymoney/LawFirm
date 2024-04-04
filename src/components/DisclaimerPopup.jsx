@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function DisclaimerPopup() {
+  const navigate = useNavigate()
   const [showPopup, setShowPopup] = useState(true);
 
   const handleAccept = () => {
@@ -11,10 +12,9 @@ function DisclaimerPopup() {
     setShowPopup(false);
   };
   const handleReject = () => {
-    // navigate = useNavigate();
     // Handle user's acceptance logic (e.g., store in local storage)
     setShowPopup(false);
-    // navigate("/about")
+    navigate("/about")
   };
 
   return (

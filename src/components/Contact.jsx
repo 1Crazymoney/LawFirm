@@ -2,7 +2,8 @@ import React, {useEffect, useState} from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"                  
 import { apiConnector } from "../apiconnector"
-import { requestEndpoint } from "../api"                                                                
+import { requestEndpoint } from "../api"   
+import {Toaster, toast} from "react-hot-toast"                                                           
 
 const Contact = () => {
     const navigate = useNavigate()
@@ -20,6 +21,7 @@ const Contact = () => {
                 data
             )
             console.log("Email Res: ", submitResponse)
+            toast.success("Successful. We will contact you shortly!!")
         }
         catch(error) {
              console.log("Error making POST request:", error);
@@ -39,6 +41,7 @@ const Contact = () => {
                 <div class="relative flex items-top justify-center min-h-screen bg-white dark:bg-gray-900 sm:items-center sm:pt-0">
                  <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                  <div class="mt-8 overflow-hidden">
+                 < Toaster />
                   <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
                         <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
@@ -81,20 +84,20 @@ const Contact = () => {
                     <form class="p-6 flex flex-col justify-center" onSubmit={handleSubmit(submitContactForm)}>
                         <div class="flex flex-col">
                             <label htmlFor="name" class="hidden">Full Name</label>
-                            <input type="name" name="name" id="name" {...register("fullname", {required:true})} placeholder="Full Name" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none" />
-                            {errors.name && <span>Please Enter Your Name</span>}
+                            <input type="text" name="name" id="name" {...register("fullname", {required:true})} placeholder="Full Name" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none" />
+                            {errors.fullname && <span class="text-white">Please Enter Your Name</span>}
                         </div>
     
                         <div class="flex flex-col mt-2">
                             <label htmlFor="email" class="hidden">Email</label>
                             <input type="email" name="email" id="email" {...register("email", {required:true})} placeholder="Email" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none" />
-                            {errors.email && <span>Please Enter Your Email</span>}
+                            {errors.email && <span class="text-white">Please Enter Your Email</span>}
                         </div>
     
                         <div class="flex flex-col mt-2">
                             <label htmlFor="tel" class="hidden">Number</label>
                             <input type="tel" name="tel" id="tel" {...register("tel", {required:true})} placeholder="Telephone Number" class="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none" />
-                            {errors.tel && <span>Please Enter Your Contact Number</span>}
+                            {errors.tel && <span class=" text-white ">Please Enter Your Contact Number</span>}
                         </div>
     
                         <button type="submit" class="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300">

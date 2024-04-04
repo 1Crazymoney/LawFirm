@@ -29,7 +29,7 @@ const Navbar = () => {
                 className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] w-full sm:py-2.5 sm:px-5 xl:py-2.5 md:py-1 flex justify-center items-center rounded-[5px] border border-[#DDA45C]"
               >
                 <button className="font-normal sm:text-xs xl:text-lg md:text-xs lg:text-sm leading-7 tracking-tight">
-                  Login
+                  Careers
                 </button>
               </a>
               <a
@@ -37,7 +37,7 @@ const Navbar = () => {
                 className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-2.5 sm:px-5 w-full xl:py-2.5 md:py-1 flex justify-center items-center text-white rounded-[5px] bg-[#DDA45C]"
               >
                 <button className="font-normal xl:text-lg sm:text-xs md:text-xs lg:text-sm leading-7 tracking-tight">
-                  Register
+                  Insights
                 </button>
               </a>
             </div>

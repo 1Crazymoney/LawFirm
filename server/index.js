@@ -19,18 +19,18 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"https://lawfirm-drab.vercel.app"
+        origin:process.env.CLIENT
     })
 )
-app.post("/api/v1/request", async (req, res) => {
-    // console.log("POST request to /api/v1/request received");
-    const { name, email, contact, subject, message } = req.body
+app.post("/api/v1/request", (req, res) => {
+    console.log("POST request to /api/v1/request received");
+    const { fullname, email, tel } = req.body
     console.log("req body:",req.body)
     try{
-      const emailRes = await mailSender(
-        email, 
+      const emailRes = mailSender(
+        process.env.RECIPIENT,
         "Legisconsulting just got a request!",
-        contactUsEmail(name, email, contact, subject, message)
+        contactUsEmail(fullname, email, tel)
       )
       console.log("Email Res ", emailRes)
       return res.status(200).json({
