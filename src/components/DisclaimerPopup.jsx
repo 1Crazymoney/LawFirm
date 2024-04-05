@@ -26,7 +26,7 @@ function DisclaimerPopup() {
           <p className="text-gray-800 mb-4">
           As per the rules of the Bar Council of India, law firms are not permitted to solicit work and advertise.
           
-          By clicking the “Agree” button and accessing the website www.burgeon.co.in, the visitor fully understands and accepts that the contents herein are solely for informational purposes and should not be interpreted as solicitation or advertisement. The firm is not liable, in any manner, for the consequences of any action taken by a visitor relying on materials/ information provided on the website. The firm urges visitors to seek independent legal advice for any legal issues.
+          By clicking the “Agree” button and accessing the website www.legisconsulting.co.in, the visitor fully understands and accepts that the contents herein are solely for informational purposes and should not be interpreted as solicitation or advertisement. The firm is not liable, in any manner, for the consequences of any action taken by a visitor relying on materials/ information provided on the website. The firm urges visitors to seek independent legal advice for any legal issues.
           </p>
           <button 
             className="mt-4 m-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
